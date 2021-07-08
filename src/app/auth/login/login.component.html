@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-center">
+        <div id="enter" class="form-control">
+                <h1>Bienvenido!</h1>
+                <p>Ingrese su nombre y seleccione los tres animales con los que va a iniciar sesión:</p>
+                <input type="text"  class="form-control" placeholder="ingrese nombre" [(ngModel)]="nombre">
+                <hr>
+                    <div *ngFor="let item of botones; let i=index" class="d-flex justify-content-center btn-group" role="group">
+                    <a class="btn btn-success btn-lg btn-block {{item.estado}}" id="{{item.nombre}}" (click)="desactivarBoton(i)"> <fa-icon [icon]="item.clase" ></fa-icon></a>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-center">
+                        <input type="button" class="btn btn-primary btn-lg btn-block" (click)="iniciarSesion()" value="Iniciar sesion">
+                    </div>
+        </div>
+</div>
